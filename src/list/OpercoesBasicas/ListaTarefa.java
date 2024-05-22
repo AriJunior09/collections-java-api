@@ -24,4 +24,12 @@ public class ListaTarefa {
         }
         tarefaList.removeAll(tarefasParaRemover);
     }
+
+    public int obterNumeroTotalTarefas(){
+        return tarefaList.size();
+    }
+
+    public void obterDescricoesTarefas(){
+        System.out.println(tarefaList);
+    }
 }
