@@ -32,7 +32,7 @@ public class Pessoa implements Comparable<Pessoa>{
 
     @Override
     public String toString() {
-        return "Nome: " + nome + '\'' +
+        return "Nome: " + nome +
                 ", Idade: " + idade +
                 ", Altura: " + altura + "\n";
     }

@@ -34,8 +34,9 @@ public class OrdenacaoPessoas {
         ordenacaoPessoas.adicionarPessoa("Miguel", 25, 1.92);
         ordenacaoPessoas.adicionarPessoa("Isac", 29, 1.70);
 
-        System.out.println(ordenacaoPessoas.ordenarPorIdade());
-        System.out.println(ordenacaoPessoas.ordenarPorAltura());
+//        System.out.println(ordenacaoPessoas.ordenarPorIdade());
+//        System.out.println(ordenacaoPessoas.ordenarPorAltura());
+        System.out.println(ordenacaoPessoas.pessoaList);
 
     }
 
