@@ -35,19 +35,20 @@ public class ConjuntoConvidados {
 
     public static void main(String[] args) {
         ConjuntoConvidados conjuntoConvidados = new ConjuntoConvidados();
-//        System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " Convidados dentro do Set de Convidados");
+//        System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " Convidado(s) dentro do Set de Convidados");
 
-        conjuntoConvidados.adicionarConvidado("Convidado 1", 10);
-        conjuntoConvidados.adicionarConvidado("Convidado 2", 20);
-        conjuntoConvidados.adicionarConvidado("Convidado 3", 30);
-        conjuntoConvidados.adicionarConvidado("Convidado 4", 40);
+        conjuntoConvidados.adicionarConvidado("Convidado 1", 101);
+        conjuntoConvidados.adicionarConvidado("Convidado 2", 201);
+        conjuntoConvidados.adicionarConvidado("Convidado 3", 101);  // Esse convidado não será criado pois estamos usando
+        conjuntoConvidados.adicionarConvidado("Convidado 4", 401);  // o equals and hashcode para impedir a duplicidade de codigo
 
-        System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " Convidados dentro do Set de Convidados");
+        System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " Convidado(s) dentro do Set de Convidados");
         conjuntoConvidados.exibirConvidados();
 
-        conjuntoConvidados.removerConvidadoPorCodigoConvite(20);
+        conjuntoConvidados.removerConvidadoPorCodigoConvite(1);
+        System.out.println("Removendo o codigo 101");
 
-        System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " Convidados dentro do Set de Convidados");
+        System.out.println("Existem " + conjuntoConvidados.contarConvidados() + " Convidado(s) dentro do Set de Convidados");
         conjuntoConvidados.exibirConvidados();
 
 
