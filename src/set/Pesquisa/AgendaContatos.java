@@ -40,5 +40,29 @@ public class AgendaContatos {
         return contatoAtualizado;
     }
 
+    public static void main(String[] args) {
+        AgendaContatos agendaContatos = new AgendaContatos();
+
+        agendaContatos.adicionarContato("Ari", 1000);
+        agendaContatos.adicionarContato("Ari", 2000); // Esse contato não será adicionado pois tem o mesmo nome!
+        agendaContatos.adicionarContato("Ari Junior", 2000);
+        agendaContatos.adicionarContato("Rute Anjos", 3000);
+        agendaContatos.adicionarContato("Rute Pinheiro ", 4000);
+        agendaContatos.adicionarContato("Cleene ", 3000);
+
+        System.out.println("Lista de contatos: ");
+        agendaContatos.exibirContato();
+
+        System.out.println("Pesquisar por nome: \n" + agendaContatos.pesquisarPorNome("Rute"));   //Pesquisando pelo nome
+
+        agendaContatos.atualizarNumeroContato("Rute Anjos", 8000);
+
+        System.out.println("Lista de contatos: ");
+        agendaContatos.exibirContato();
+
+
+
+
+    }
 
 }
