@@ -2,11 +2,16 @@ package set.Ordenacao;
 
 import java.util.Objects;
 
-public class Produto {
+public class Produto implements Comparable<Produto>{
     private long codigo;
     private String nome;
     private double preco;
     private int quantidade;
+
+    @Override
+    public int compareTo(Produto p) {
+        return nome.compareToIgnoreCase(p.getNome());
+    }
 
     public Produto(long codigo, String nome, double preco, int quantidade) {
         this.codigo = codigo;
@@ -53,4 +58,6 @@ public class Produto {
                 ", quantidade=" + quantidade +
                 '}';
     }
+
+
 }

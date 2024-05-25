@@ -2,6 +2,7 @@ package set.Ordenacao;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class CadastroProduto {
     private Set<Produto> produtoSet;
@@ -14,7 +15,8 @@ public class CadastroProduto {
         produtoSet.add(new Produto(cod, nome, preco, quantidade));
     }
 
-    public void exibirProdutosPorNome(){
-        
+    public Set<Produto> exibirProdutosPorNome(){
+        Set<Produto> produtosPorNome = new TreeSet<>(produtoSet);
+        return produtosPorNome;
     }
 }
