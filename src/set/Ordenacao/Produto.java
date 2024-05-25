@@ -1,5 +1,6 @@
 package set.Ordenacao;
 
+import java.util.Comparator;
 import java.util.Objects;
 
 public class Produto implements Comparable<Produto>{
@@ -51,12 +52,41 @@ public class Produto implements Comparable<Produto>{
 
     @Override
     public String toString() {
-        return "Produto{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", quantidade=" + quantidade +
-                '}';
+        return "Código=" + codigo +
+                ", Nome='" + nome + '\'' +
+                ", Preco=" + preco +
+                ", Quantidade=" + quantidade +
+                '\n';
+    }
+
+    static class ComparatorPorPreco implements Comparator<Produto>{
+
+        @Override
+        public int compare(Produto p1, Produto p2) {
+            return Double.compare(p1.getPreco(), p2.getPreco());
+        }
+    }
+
+    static class ComparatorPorQuantidade implements Comparator<Produto> {
+        @Override
+        public int compare(Produto p1, Produto p2) {
+            int quantidadeCompare = Integer.compare(p1.getQuantidade(), p2.getQuantidade());
+            if (quantidadeCompare != 0) {
+                return quantidadeCompare;
+            } else {
+                int nomeCompare = p1.getNome().compareToIgnoreCase(p2.getNome());
+                if (nomeCompare != 0) {
+                    return nomeCompare;
+                } else {
+                    int precoCompare = Double.compare(p1.getPreco(), p2.getPreco());
+                    if (precoCompare != 0) {
+                        return precoCompare;
+                    } else {
+                        return Long.compare(p1.getCodigo(), p2.getCodigo());
+                    }
+                }
+            }
+        }
     }
 
 
