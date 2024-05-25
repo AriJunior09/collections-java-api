@@ -13,4 +13,8 @@ public class CadastroProduto {
     public void adicionarProduto(long cod, String nome, double preco, int quantidade){
         produtoSet.add(new Produto(cod, nome, preco, quantidade));
     }
+
+    public void exibirProdutosPorNome(){
+        
+    }
 }
