@@ -33,8 +33,11 @@ public class AgendaContatos {
         for(Contato c : contatoSet){
             if(c.getNome().equalsIgnoreCase(nome)){
                 c.setNumero(novoNumero);
+                contatoAtualizado = c;
+                break;
             }
         }
+        return contatoAtualizado;
     }
 
 
