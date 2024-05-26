@@ -33,6 +33,7 @@ public class EstoqueProdutos {
         double maiorPreco = Double.NEGATIVE_INFINITY;
         for (Produto p : estoqueProdutosMap.values()) {
             if (p.getPreco() > maiorPreco) {
+                maiorPreco = p.getPreco();
                 produtoMaisCaro = p;
             }
         }
@@ -44,9 +45,9 @@ public class EstoqueProdutos {
 
         estoqueProdutos.adicionarProduto(100L, "Manga", 3.00, 1);
         estoqueProdutos.adicionarProduto(101L, "Abacaxi", 5.00, 1);
-        estoqueProdutos.adicionarProduto(102L, "Melão", 80.00, 1);
-        estoqueProdutos.adicionarProduto(103L, "Caju", 0.20, 2);
-        estoqueProdutos.adicionarProduto(103L, "Caja", 0.80, 1);
+        estoqueProdutos.adicionarProduto(102L, "Melão", 8.00, 1);
+        estoqueProdutos.adicionarProduto(103L, "Caju", 90.20, 2);
+        estoqueProdutos.adicionarProduto(103L, "Caja", 10.80, 1);
 
         estoqueProdutos.exibirProduto();
         System.out.printf("O valor total do estoque é: R$ %.2f%n", estoqueProdutos.calcularValorTotalEstoque());
