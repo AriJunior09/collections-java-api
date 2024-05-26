@@ -21,16 +21,23 @@ public class EstoqueProdutos {
     public Double calcularValorTotalEstoque() {
         double ValorTotalEstoque = 0d;
         if (!estoqueProdutosMap.isEmpty()) {
-            for(Produto p : estoqueProdutosMap.values()) {
+            for (Produto p : estoqueProdutosMap.values()) {
                 ValorTotalEstoque += p.getPreco() * p.getQuantidade();
             }
         }
         return ValorTotalEstoque;
     }
 
-    public Produto obterProdutoMaisCaro(){
+    public Produto obterProdutoMaisCaro() {
         Produto produtoMaisCaro = null;
         double maiorPreco = Double.MIN_VALUE;
-        
+        if (!estoqueProdutosMap.isEmpty()) {
+            for (Produto p : estoqueProdutosMap.values()) {
+                if(p.getPreco() > maiorPreco){
+                    p = produtoMaisCaro;
+                }
+            }
+        }
+        return produtoMaisCaro;
     }
 }
