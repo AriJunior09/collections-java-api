@@ -11,7 +11,7 @@ public class EstoqueProdutos {
     }
 
     public void adicionarProduto(Long cod, String nome, Double preco, int quantidade) {
-        estoqueProdutosMap.put(cod, new Produto(nome, preco, quantidade);
+        estoqueProdutosMap.put(cod, new Produto(nome, preco, quantidade));
     }
 
     public void exibirProduto() {
@@ -30,14 +30,30 @@ public class EstoqueProdutos {
 
     public Produto obterProdutoMaisCaro() {
         Produto produtoMaisCaro = null;
-        double maiorPreco = Double.MIN_VALUE;
-        if (!estoqueProdutosMap.isEmpty()) {
-            for (Produto p : estoqueProdutosMap.values()) {
-                if(p.getPreco() > maiorPreco){
-                    p = produtoMaisCaro;
-                }
+        double maiorPreco = Double.NEGATIVE_INFINITY;
+        for (Produto p : estoqueProdutosMap.values()) {
+            if (p.getPreco() > maiorPreco) {
+                produtoMaisCaro = p;
             }
         }
         return produtoMaisCaro;
     }
+
+    public static void main(String[] args) {
+        EstoqueProdutos estoqueProdutos = new EstoqueProdutos();
+
+        estoqueProdutos.adicionarProduto(100L, "Manga", 3.00, 1);
+        estoqueProdutos.adicionarProduto(101L, "Abacaxi", 5.00, 1);
+        estoqueProdutos.adicionarProduto(102L, "Melão", 80.00, 1);
+        estoqueProdutos.adicionarProduto(103L, "Caju", 0.20, 2);
+        estoqueProdutos.adicionarProduto(103L, "Caja", 0.80, 1);
+
+        estoqueProdutos.exibirProduto();
+        System.out.printf("O valor total do estoque é: R$ %.2f%n", estoqueProdutos.calcularValorTotalEstoque());
+        System.out.println("O Produto mais caro é: " + estoqueProdutos.obterProdutoMaisCaro());
+
+
+    }
+
+
 }
