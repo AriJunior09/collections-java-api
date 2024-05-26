@@ -7,7 +7,6 @@ import java.util.Scanner;
 public class AgendaContatos {
     private Map<String, Integer> agendaContatoMap;
 
-
     public AgendaContatos() {
         this.agendaContatoMap = new HashMap<>();
     }
@@ -38,22 +37,25 @@ public class AgendaContatos {
         AgendaContatos agendaContatos = new AgendaContatos();
         Scanner sc = new Scanner(System.in);
 
-        agendaContatos.adicionarContato("Camila", 889990949);
-        agendaContatos.adicionarContato("Bruno", 12345);
-        agendaContatos.adicionarContato("Ari", 10000);
-        agendaContatos.adicionarContato("Ari Junior", 900);
-        agendaContatos.adicionarContato("Rute", 554421);
+        agendaContatos.adicionarContato("CAMILA", 889990949);
+        agendaContatos.adicionarContato("BRUNO", 12345);
+        agendaContatos.adicionarContato("ARI", 10000);
+        agendaContatos.adicionarContato("ARI JUNIOR", 900);
+        agendaContatos.adicionarContato("RUTE", 554421);
 
         agendaContatos.exibirContato();
 
-//        agendaContatos.removerContato("Ari Junior");
         System.out.print("Faça a Pesquisa: ");
-        String nomePesquisa = sc.next();
+        String nomePesquisa = sc.nextLine().toUpperCase();
+        Integer telefone = agendaContatos.pesquisarPorNome(nomePesquisa);
 
-        System.out.printf("O Telefone do %s é %d", nomePesquisa, agendaContatos.pesquisarPorNome(nomePesquisa) );
-//        agendaContatos.exibirContato();
+        if (telefone != null) {
+            System.out.printf("O Telefone do %s é %d%n", nomePesquisa, telefone);
+        } else {
+            System.out.println("Contato não encontrado!");
+        }
 
-
+        sc.close();
 
 
     }
